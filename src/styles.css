@@ -1,1 +1,514 @@
-/* You can add global styles to this file, and also import other style files */
+/* Developer */
+/* Jose Acevedo */
+/* //////////////////////////////////////////////////////////////////////////////////////////// */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* layout Start */
+
+#header {
+  width: 100%;
+  height: 54px;
+  background-color: #202020;
+  padding-right: 32px;
+  padding-left: 64px;
+}
+
+#body {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+#footer {
+  width: 100%;
+  max-width: 1440px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin: 0 auto;
+  background-color: #252423;
+}
+
+/* layout End */
+
+.font_anton {
+  font-family: "Anton", sans-serif;
+}
+.fz_36 {
+  font-size: 36px;
+}
+.fz_20 {
+  font-size: 20px;
+}
+.fz_24 {
+  font-size: 24px;
+}
+.fz_16 {
+  font-size: 16px;
+}
+
+.bg_dark_1 {
+  background: #151515;
+}
+
+.cl_gray {
+  color: #c1c1c1;
+}
+.cl_red {
+  color: #ec1d24;
+}
+/* Header Start */
+
+.logo {
+  width: 140px;
+  height: 100%;
+  margin: auto 0;
+  cursor: pointer;
+}
+.logo img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin: auto 0;
+  padding: 0;
+}
+.navbar li {
+  list-style: none;
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #cdcdcd;
+  outline: none !important;
+  transition: opacity 0.5s;
+}
+
+.navbar li > a {
+  outline: none !important;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: bold;
+  color: #cdcdcd;
+  height: 100%;
+  padding: 1rem;
+}
+
+.navbar li:hover {
+  border-bottom: 2px solid #ec1d24;
+  opacity: 1;
+  color: white;
+}
+
+.navbar_active {
+  color: white !important;
+  border-bottom: 2px solid #ec1d24 !important;
+  opacity: 1;
+}
+
+.signIn {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.signIn_button {
+  outline: none !important;
+  cursor: pointer;
+  color: white;
+  border: none;
+  font-weight: bold;
+  width: 120px;
+  height: 44px;
+  background: #ec1d24;
+  transition: all 0.1s;
+}
+
+.signIn_button:hover {
+  border: 2px solid white;
+}
+
+/* Header End */
+
+/* Home Start */
+.banner_marvel {
+  width: 100%;
+  height: calc(100vh - 54px);
+  position: relative;
+  z-index: 1;
+}
+.banner_marvel img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation-name: fade-in;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.banner_marvel_over {
+  z-index: 2;
+  background: rgba(1, 1, 1, 0.8);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.banner_marvel_text {
+  z-index: 3;
+  top: 0;
+  padding: 0px 0px 0px 72px;
+}
+
+.common_buttom {
+  outline: none !important;
+  cursor: pointer;
+  color: white;
+  border: none;
+  font-weight: bold;
+  background: #ec1d24;
+  transition: all 0.1s;
+  padding: 1rem 2rem;
+}
+
+.common_buttom:hover {
+  border: 2px solid white;
+}
+
+/* Home End */
+
+/* Characters Start  */
+
+.banner_characters {
+  position: absolute;
+  height: 400px;
+  z-index: 1;
+}
+.banner_characters img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  object-fit: cover;
+}
+.banner_characters_footer {
+  width: 100%;
+  background: #111111;
+  height: 80px;
+}
+
+.search_characters {
+  width: 100%;
+  border: 1px solid #c1c1c1;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search_characters_text {
+  display: flex;
+  align-items: center;
+  border-right: 1px solid #c1c1c1;
+  height: 100%;
+}
+
+.search_characters_input {
+  width: 100%;
+  padding: 0px 1rem;
+}
+.search_characters_input input {
+  width: 100%;
+}
+.search_characters_input input::placeholder {
+  color: #c1c1c1;
+}
+
+.card_character {
+  width: 100%;
+  height: 320px;
+  position: relative;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.card_character_img {
+  width: 100%;
+  height: 320px;
+  box-sizing: border-box;
+  position: absolute;
+  overflow: hidden;
+}
+.card_character_img img {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 0.5s;
+  object-fit: cover;
+}
+
+.card_character_img img:hover {
+  transform: scale(1.1);
+}
+
+.card_character_footer {
+  width: 100%;
+  height: 48px;
+  background: linear-gradient(to right, #e40c13, transparent);
+  position: absolute;
+  bottom: 0px;
+  padding: 0px 0.5rem 0px 0.5rem;
+  display: flex;
+  align-items: center;
+  text-overflow: ellipsis;
+  transition: all 0.5s;
+}
+
+.card_character:hover .card_character_footer {
+  background: linear-gradient(to right, #e40c13, #e40c13);
+}
+
+.search_characters_input input {
+  border: none;
+  outline: none !important;
+  font-size: 16px;
+  font-family: "Anton", sans-serif;
+  color: #252423;
+}
+
+.search_characters_check {
+  width: 218px;
+  border-left: 1px solid #c1c1c1;
+  height: 100%;
+}
+
+.not-found {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  background: rgba(1, 1, 1, 0.1);
+}
+.not-found p {
+  text-align: center;
+  color: #252423;
+  font-size: 32px;
+}
+/* Characters End  */
+
+/* Animations Start */
+
+.fade-in {
+  animation-name: fade-In;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes fade-In {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Animations End */
+
+/* Character Only Start */
+
+.presentacion_character {
+  width: 100%;
+  height: 100%;
+  background: #111111;
+  box-sizing: border-box;
+}
+.presentacion_character_img {
+  width: 100%;
+  height: 400px;
+  position: relative;
+}
+.presentacion_character_img img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  object-fit: cover;
+}
+.presentacion_character_img_over {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(1, 1, 1, 0.2);
+  top: 0;
+}
+
+.card_comic {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.card_comic:hover {
+  transform: translateY(-5%);
+}
+.card_comic:hover .titleComic {
+  color: #ec1d24;
+}
+
+.card_comic_img {
+  width: 100%;
+  height: 280px;
+}
+.card_comic_img img {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+}
+
+/* Character Only End */
+
+/* Login Start */
+
+.login_banner {
+  width: 100%;
+  height: calc(100vh - 54px);
+  background: url("./assets/img/fdad9804319ddac0dc1a67c2968a6fc6.webp");
+  object-fit: cover;
+  background-size: cover;
+}
+.login_banner_over {
+  width: 100%;
+  height: 100%;
+  background: rgba(1, 1, 1, 0.5);
+  top: 0;
+  position: absolute;
+}
+.card_login {
+  width: 100%;
+  background: white;
+  border-radius: 2px;
+  box-shadow: 4px 4px 8px 1px #111111;
+  padding: 24px;
+}
+
+.common_input {
+  padding: 0.5rem;
+  border: 1px solid #cdcdcd;
+  border-radius: 4px;
+  color: #151515;
+  width: 100%;
+  margin-bottom: 16px;
+}
+.common_input::placeholder {
+  color: #cdcdcd;
+}
+/* Login End */
+
+/* //////////////////////////////////////////////////////////////////////////////////////////// */
+/* Jose Acevedo */
+/* Developer */
+
+/* Material Form */
+
+.mat-form-field[_ngcontent-ami-c174] {
+  margin-right: 0;
+  background: #fff;
+}
+.mat-form-field {
+  width: 100%;
+  position: relative;
+  text-align: left;
+  height: 32px;
+  border-radius: 4px;
+  outline: 0 !important;
+  background: #fff !important;
+}
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  border-radius: 4px 4px 0 0;
+  padding: 0px 0px 0 0px;
+  height: 50px;
+  font-size: 14px;
+}
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: rgba(255, 255, 255);
+}
+.mat-datepicker-content .mat-calendar-next-button,
+.mat-datepicker-content .mat-calendar-previous-button,
+.mat-datepicker-toggle {
+  color: #e1097e;
+  outline: 0 !important;
+}
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  border-radius: 4px 4px 4px 4px;
+  padding: 0px 0px 0px 0px;
+}
+.mat-form-field-underline {
+  bottom: 1em;
+  background: #bdbdbd;
+  display: none;
+}
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  border-radius: 4px !important;
+  padding: 6px 0px 0 0px !important;
+  border: 2px solid transparent;
+  color: #bdbdbd;
+}
+.mat-label {
+  color: #bdbdbd;
+}
+.mat-form-field-appearance-fill .mat-icon i {
+  display: block;
+}
+.br_pink.mat-form-field {
+  border: 0;
+}
+.mat-input-element.black {
+  color: #000 !important;
+}
+.top-4 .mat-icon-button {
+  top: -6px;
+}
+.mat-form-field-appearance-fill.mat-form-field-disabled .mat-form-field-flex {
+  background: #fff;
+}
+.mat-form-field-appearance-fill.mat-form-field-disabled .mat-form-field-flex {
+  background-color: #fff !important;
+}
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: #fff !important;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

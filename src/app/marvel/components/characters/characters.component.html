@@ -1,0 +1,69 @@
+<div class="position-relative" style="height: 480px">
+    <div class="banner_characters">
+        <img src="../../../../assets/img/banner_characterjpg.jpg" alt="">
+        <div class="banner_marvel_over"></div>
+        <div class="w-100 h-100 position-absolute d-flex flex-column justify-content-center"
+            style="z-index: 4; top: 0;">
+            <h2 class="fz_36 font_anton text-white text-center">PERSONAJES DE MARVEL</h2>
+            <p class="text-center text-white">
+                <strong>
+                    ¡Enganchate con una generosa ayuda de héroes y villanos de la
+                    humilde Casa
+                    de las Ideas!
+                </strong>
+            </p>
+        </div>
+        <div class="banner_characters_footer"></div>
+    </div>
+</div>
+<div class="container">
+    <div class="row fade-in">
+        <h3 class="font_anton mt-4" style="border-bottom: 2px solid #ec1d24;">PERSONAJES DESTACADOS</h3>
+        <div class="col-md-12">
+            <div class="search_characters my-4">
+                <div class="search_characters_text px-4">
+                    <i class="far fa-search fz_20 mr-2" style="color: #ec1d24;"></i>
+                    <p class="m-0"><small>Buscar</small></p>
+                </div>
+                <div class="search_characters_input">
+                    <input type="text" [(ngModel)]="filterCharacter" maxlength="40" placeholder="Buscar..." />
+                </div>
+                <div class="search_characters_check pl-2">
+                    <mat-form-field appearance="fill">
+                        <mat-label style="color: #111111;">Tipo</mat-label>
+                        <mat-select [formControl]="toppings" multiple>
+                            <mat-select-trigger>
+                                {{toppings.value ? toppings.value[0] : ''}}
+                                <span *ngIf="toppings.value?.length > 1" class="example-additional-selection">
+                                    (+{{toppings.value.length - 1}}
+                                    {{toppings.value?.length === 2 ? 'other' : 'others'}})
+                                </span>
+                            </mat-select-trigger>
+                            <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col-md-3 mb-4"
+            *ngFor="let character of allCharacters | async | filterCharacters : filterCharacter ">
+            <div class="card_character fade-in" (click)="onlyCharacter(character)">
+                <div class="card_character_img">
+                    <img src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}"
+                        alt="{{character.name}}" />
+                </div>
+                <div class="card_character_footer">
+                    <p class="font_anton fz_20 text-white m-0">{{character.name}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12" *ngIf="!allCharacters">
+            <div class="w-100 not-found font_anton">
+                <p>No Encontramos Lo Que Buscas...</p>
+            </div>
+        </div>
+
+    </div>
+</div>

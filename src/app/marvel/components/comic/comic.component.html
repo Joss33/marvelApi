@@ -1,0 +1,22 @@
+<div class="w-100 bg_dark_1 h-100 py-4">
+    <div class="container ">
+        <div class="row mb-4">
+            <div class="col-md-3 position-relative">
+                <h2 class="fz_24 font_anton text-white m-0" style="border-bottom: 2px solid #e40c13;">
+                    Aparicion En Comics</h2>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-md-2 mb-4 fade-in" *ngFor="let comic of dataComic">
+                <div class="card_comic">
+                    <div class="card_comic_img mb-1">
+                        <img src="{{comic.image}}" alt="">
+                    </div>
+                    <h5 class="fz_16 font_anton text-left m-0 cl_gray mb-2">{{comic.format}}</h5>
+                    <h5 class="fz_16 font_anton titleComic text-left m-0 text-white " style="text-overflow: ellipsis;">
+                        {{comic.title}}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

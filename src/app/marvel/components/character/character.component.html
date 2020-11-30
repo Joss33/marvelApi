@@ -1,0 +1,19 @@
+<div class="presentacion_character ">
+    <div class="container">
+        <div class="row" *ngFor="let character of dataCharacter">
+            <div class="col-md-5">
+                <div class="presentacion_character_img">
+                    <img [src]="character.image" alt="{{character.name}}">
+                    <div class="presentacion_character_img_over"></div>
+                </div>
+            </div>
+            <div class="col-md-7 d-flex justify-content-center align-items-center flex-column">
+                <h4 class="fz_24 font_anton text-white">{{character.name}}!</h4>
+                <p class="fz_16  text-white text-center">{{character.descripcion}} <span
+                        *ngIf="character.descripcion === ''">Descipcion no encontrada</span></p>
+                <p class="fz_14  text-white text-center">{{character.copyright}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<app-comic></app-comic>

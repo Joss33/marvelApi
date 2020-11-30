@@ -1,0 +1,43 @@
+<div id="header" class="d-flex justify-content-between ">
+    <div class="w-100 d-flex">
+        <div class="logo" routerLink="" style="outline: none !important;">
+            <img src="../../assets/img/1200px-MarvelLogo.svg.png" alt="Marvel">
+        </div>
+
+        <ul class="navbar">
+            <li [ngClass]="{ 'navbar_active': router.url === '/personajes' || router.url === '/personajes/:id' }"
+                routerLink="/personajes">
+                <a>
+                    Personajes
+                </a>
+            </li>
+            <li [ngClass]="{ 'navbar_active': router.url === '/comics' }" routerLink="comics">
+                <a>
+                    Comics
+                </a>
+            </li>
+            <li>
+                <a>Peliculas</a>
+            </li>
+            <li>
+                <a>Tienda</a>
+            </li>
+            <li>
+                <a>Más</a>
+            </li>
+        </ul>
+    </div>
+    <div class="signIn">
+        <button class="signIn_button" *ngIf="router.url !== '/login'" routerLink="/login">Registrarse</button>
+    </div>
+
+</div>
+
+<div id="body">
+    <router-outlet></router-outlet>
+</div>
+
+<div id="footer">
+    <div class="items"></div>
+    <div class="social_network"></div>
+</div>

@@ -1,6 +1,15 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths": {
+      "@app/*": ["src/app/*"],
+      "@shared/*": ["src/app/shared/*"],
+      "@environment/*": ["src/app/environments/*"],
+      "@marvel/*": ["src/app/marvel/*"],
+      "@layout/*": ["src/app/layout/*"],
+      "@services": ["src/app/core/services/*"],
+      "@core": ["src/app/core/*"]
+    },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
